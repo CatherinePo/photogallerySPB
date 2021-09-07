@@ -1,0 +1,7 @@
+<div id="cardsList" class="card-list container">
+    <div class="card " *ngFor="let photo of photos; index as photosId">
+        <a href="" [routerLink]="['/photos', photosId]">
+           <img [src]="photo.url" [alt]="photo.name"> 
+        </a>
+    </div>
+</div>

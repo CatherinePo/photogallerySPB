@@ -1,0 +1,33 @@
+<div class="container">
+    <span class="back-btn" >
+        <img class="svg" [routerLink]="['/']" src="../../assets/images/back.svg" height="36px"  alt="" >
+    </span>
+    <div class="card">
+        <img class="selected-photo" [src]="photo.url" [alt]="photo.name">
+        <div class="btn-group">
+        <span class="like-btn" (click)="like()">
+            <img class="svg" src="../../assets/images/like.svg" height="24px"  alt="" >
+             &nbsp; {{likeCounter}}    
+        </span>
+        <span class="comment-group">
+            <div>Send comment: &nbsp;   </div> 
+            <div class="comment-input">
+            <input type="text" ng-model="message" [value]="message"  (keyup.enter)="addComment()" (input)="message = $event.target.value">
+            <!-- <button (click)="addComment()">Добавить комментарий</button> -->
+            <span class="send-btn"  (click)="addComment()">
+                <img class="svg" src="../../assets/images/right-arrow.svg" height="24px"  alt="">
+                  
+            </span>       
+            </div>
+               
+        </span>
+        <!-- <form > -->
+           
+        </div>
+        <div  class="comment-list" *ngFor="let comment of commentArr">
+            <div class="comment-item" ><span class="user-name">@user </span>{{comment}}</div>
+        </div>
+    </div>
+    
+</div>
+
